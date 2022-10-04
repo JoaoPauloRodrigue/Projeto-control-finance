@@ -1,0 +1,27 @@
+.no-data-registered {
+    width: 21.43rem;
+    height: 5.25rem;
+    width: 100%;
+    border: 0.125rem dashed var(--color-grey-3);
+    border-radius: 0.5rem;
+    gap: 1rem;
+    background-color: var(--color-grey-5);
+    cursor: pointer;
+}
+
+.no-data-registered:hover {
+    background-color: var(--color-grey-4);
+}
+
+@media(min-width:43.75rem){
+    .no-data-registered {
+        gap: 1rem;
+        width: 53rem;
+        height: 5.25rem;
+        border: 0.125rem dashed var(--color-grey-3);
+        border-radius: 0.5rem;
+        background-color: var(--color-grey-5);
+        cursor: pointer;
+    }
+    
+}

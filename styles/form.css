@@ -1,0 +1,31 @@
+.type-task-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 16.31rem;
+    height: 5.5625rem;
+    padding: 0px;
+    gap: 2.375rem; 
+    position: absolute;
+    left: 1rem;
+    top: 10rem;    
+}
+
+.search-type-value {
+    height: 70%;
+    gap: 25px;
+}
+
+@media(min-width:43.75rem) {
+    .type-task-home {
+        position: static;
+        width: 53rem;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet"> 
+    <title>Control Finance</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Control Finance - Seu controle financeiro">
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    <link rel="stylesheet" href="./styles/flex.css">
+    <link rel="stylesheet" href="./styles/position.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/color.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/section-resume.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/button.css">
+    <link rel="stylesheet" href="./styles/input.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/cardvalue.css">
+    <link rel="stylesheet" href="./styles/carddefault.css">
+    <link rel="stylesheet" href="./pages/home/index.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="header-container-logo-button flex direction-col flex-start">
+            <div>
+                <h1 class="title-1-bold"><span class="color-purple">Control</span> Finance</h1>
+            </div>
+            
+            <nav class="nav-container">
+                <button class="button-register-nav text-3-medium">Registrar novo valor</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app">
+        <section class="resume-container">
+            
+            <form id="filter" class="type-task-home">
+                <h2 class="title-2-medium">Resumo financeiro</h2>
+                <div class="input-select-home text-1-bold">
+                    <button id="all">Todos</button>
+
+                    <button id="entry">Entrada</button>
+                    
+                    <button id="exit">Saída</button>
+                </div>
+
+            </form>
+            <div class="money-in-account position-absolute">
+                <h3 class="text-2-medium">Soma dos valores</h3>
+                <p class="text-2-medium">R$2.202,00</p>
+            </div>
+            <section class="card-list-container flex direction-col align-items position-absolute">
+                <div class="no-data-registered flex direction-col align-items-center justify-content-center">
+                    <h3 class="title-2-bold">Nenhum valor Cadastrado</h3>
+                    <button class="text-2-medium color-grey-2">Registrar novo valor</button>
+                </div>
+
+                <ul id="account-list">
+                </ul>
+                
+            </section>
+        </section>
+        
+    </main>
+    <script src="./pages/home/valuesData.js"></script>
+    <script src="./scripts/modal.js"></script>
+    <script src="./pages/home/index.js"></script>
+</body>
+</html>

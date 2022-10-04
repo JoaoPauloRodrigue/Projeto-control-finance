@@ -1,0 +1,41 @@
+.header-container {
+    width: 100vw;
+    max-width: 100%;
+    height: 8.25rem;
+    background-color: var(--color-grey-5);
+    
+}
+
+.header-container-logo-button {
+    padding: 1.75rem 1rem;
+    gap: 1.25rem;
+}
+
+.nav-container {
+    margin: 0 auto;
+}
+
+@media(min-width:43.75rem) {
+    .header-container {
+        width: 100vw;
+        max-width: 100%;
+        height: 6.8125rem;
+        margin-bottom: 3.875rem;
+    }
+
+    .header-container-logo-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 53rem;
+        height: 100%;
+        margin: 0 auto;
+        padding: 1.75rem 0;
+    }
+
+    .nav-container {
+        margin: 0;
+    }
+
+}

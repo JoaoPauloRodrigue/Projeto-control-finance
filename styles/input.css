@@ -1,0 +1,6 @@
+.input-select-home {
+    display: flex;
+    flex-direction: row;
+    gap: 0.875rem;
+    
+}

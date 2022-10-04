@@ -1,0 +1,60 @@
+.button-register-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 21.43rem;
+    height: 2rem;
+    color: var( --color-mode);
+    background-color: var(--color-brand-1);
+    padding: 0 0.875rem;
+    border: 1.5px solid var(--color-brand-1);
+    border-radius: 0.5rem;
+    gap: 0.625rem;
+    cursor: pointer;  
+}
+
+.button-register-nav:hover {
+    background-color: var(--color-brand-2);
+}
+
+.input-select-home button {
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.875rem;
+    gap: 0.625rem;
+    border: 1.5px solid var(--color-grey-5);
+    border-radius: 0.5rem;
+    background-color: var(--color-mode);
+    cursor: pointer;
+}
+
+.input-select-home button:hover {
+    color: var(--color-brand-1);
+    background-color: var(--color-brand-3);
+    border: 1.5px solid var(--color-brand-1);
+}
+
+.input-select-home button:focus {
+    color: var(--color-brand-1);
+    background-color: var(--color-brand-3);
+    border: 1.5px solid var(--color-brand-1);
+}
+
+.no-data-registered button {
+    border: transparent;
+    cursor: pointer;
+}
+
+.trash-button:hover {
+    filter: contrast(0%);
+}
+
+@media(min-width:43.75rem) {
+    .input-select-home button {
+        cursor: pointer;
+    }
+}
