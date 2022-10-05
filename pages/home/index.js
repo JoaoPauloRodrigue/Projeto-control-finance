@@ -1,10 +1,10 @@
 function generateCards (items) {
 
-    const tagLiCard = document.createElement('li');
-    const tagPCard = document.createElement('p');
-    const tagDivCardImg = document.createElement('div');
-    const tagImgTypeEntry = document.createElement('img');
-    const tagImgTypeExit  = document.createElement('img');
+    const tagLiCard         = document.createElement('li');
+    const tagPCard          = document.createElement('p');
+    const tagDivCardImg     = document.createElement('div');
+    const tagImgTypeEntry   = document.createElement('img');
+    const tagImgTypeExit    = document.createElement('img');
     const tagImgTrashButton = document.createElement('img');
 
     tagLiCard.classList.add('card');
@@ -19,8 +19,16 @@ function generateCards (items) {
     tagImgTypeExit.src = '../../assets/Component 1tag-saida.svg';
     tagImgTypeExit.alt = 'tag com o tipo';
 
+    tagImgTrashButton.classList = 'trash-button';
     tagImgTrashButton.src  = '../../assets/trashtrash-default.svg';
     tagImgTrashButton.alt  = 'Botao de delete';
+
+    tagImgTrashButton.addEventListener('click', (event) => {
+        
+        tagLiCard.remove()
+        
+    })
+    
 
     tagLiCard.append(tagPCard,tagDivCardImg);
 
@@ -45,7 +53,8 @@ function insertCards (array) {
             tagUl.append(card);
             return card;
         })
-    
+        
+        addValue(dataAccountSaves);
 }
 insertCards (dataAccountSaves)
 
@@ -55,12 +64,9 @@ const buttonFilterExit  = document.querySelector('#exit');
 
 buttonFilterAll.addEventListener('click', (event) => {
     event.preventDefault();
-    // const arrayFilterAll = dataAccountSaves.filter((element) => {
-
-    //     return dataAccountSaves;
-    // })
 
     insertCards(dataAccountSaves);
+    addValue(dataAccountSaves);
 })
 
 buttonFilterEntry.addEventListener('click', (event) => {
@@ -71,6 +77,7 @@ buttonFilterEntry.addEventListener('click', (event) => {
     })
 
     insertCards(arrayFilterEntry);
+    addValue(arrayFilterEntry);
 })
 
 buttonFilterExit.addEventListener('click', (event) => {
@@ -81,4 +88,29 @@ buttonFilterExit.addEventListener('click', (event) => {
     })
 
     insertCards(arrayFilterExit);
+    addValue(arrayFilterExit);
 })
+
+function addValue (array) {
+
+    const showValue = document.querySelector('#show-value');
+    
+   let totalValue = array.reduce((previousValue, currentValue) => {
+
+      return  previousValue + currentValue.value
+
+    },0)
+
+    showValue.innerText = `R$ ${totalValue}`;
+}
+
+function disableNoRecordedValue() {
+
+    const tagSectionCardList = document.querySelector('.card-list-container');
+    let disableDefault = document.querySelector('.no-data-registered');
+
+        disableDefault.classList.toggle('data-registered')
+    
+
+}
+disableNoRecordedValue()

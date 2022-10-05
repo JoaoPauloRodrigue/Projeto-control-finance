@@ -24,4 +24,7 @@
         cursor: pointer;
     }
     
+    .data-registered {
+        display: none;
+    }
 }
