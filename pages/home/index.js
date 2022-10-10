@@ -23,13 +23,6 @@ function generateCards (items) {
     tagImgTrashButton.src  = '../../assets/trashtrash-default.svg';
     tagImgTrashButton.alt  = 'Botao de delete';
 
-    tagImgTrashButton.addEventListener('click', (event) => {
-        
-        tagLiCard.remove()
-        
-    })
-    
-
     tagLiCard.append(tagPCard,tagDivCardImg);
 
     if(items.categoryID == 0){
@@ -39,22 +32,42 @@ function generateCards (items) {
         tagDivCardImg.append(tagImgTypeExit,tagImgTrashButton);
     }
 
+    tagImgTrashButton.addEventListener('click', (event) => {
+
+        const index = dataAccountSaves.findIndex((element) => {
+           return element.id == items.id;
+        })
+        dataAccountSaves.splice(index,1);
+
+        insertCards (dataAccountSaves);
+        addValue(dataAccountSaves);
+
+    })
+
     return tagLiCard;
 }
 
 function insertCards (array) {
 
-    const tagUl   = document.querySelector('#account-list');
-    tagUl.innerHTML = '';
+    const tagUl       = document.querySelector('#account-list');
+    const cardDefault = document.querySelector('#container-no-data-registered');
 
+    tagUl.innerHTML   = '';
+
+    if(array.length){
         array.forEach((element)=> {
-            
+
             const card = generateCards(element);
             tagUl.append(card);
             return card;
         })
         
         addValue(dataAccountSaves);
+
+    } else {
+        cardDefault.toggleAttribute('no-data-registered');
+    }
+
 }
 insertCards (dataAccountSaves)
 
@@ -104,13 +117,3 @@ function addValue (array) {
     showValue.innerText = `R$ ${totalValue}`;
 }
 
-function disableNoRecordedValue() {
-
-    const tagSectionCardList = document.querySelector('.card-list-container');
-    let disableDefault = document.querySelector('.no-data-registered');
-
-        disableDefault.classList.toggle('data-registered')
-    
-
-}
-disableNoRecordedValue()
